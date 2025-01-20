@@ -35,6 +35,9 @@ app.post('/api/save-dates', (req, res) => {
         return res.status(400).json({ error: 'Start date and end date are required' });
     }
 
+
+
+    
     const query = 'INSERT INTO henryhurtshours (startDate , endDate ) VALUES (?, ?)';
     connection.query(query, [startDate, endDate], (err, results) => {
         if (err) {
